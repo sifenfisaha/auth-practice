@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
@@ -7,31 +7,28 @@ const Navbar: React.FC = () => {
       <nav className="flex items-center justify-center gap-9 text-lg font-bold">
         <ul className="flex items-center justify-center gap-9">
           <li>
-            <Link
-              className={`${({ isActive }: { isActive: boolean }) =>
-                isActive ? "text-red-900" : undefined}`}
-              to={"/"}
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "text-red-900" : "")}
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              className={`${({ isActive }: { isActive: boolean }) =>
-                isActive ? "text-red-900" : undefined}`}
-              to={"dashboard"}
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => (isActive ? "text-red-900" : "")}
             >
-              dashboard
-            </Link>
+              Dashboard
+            </NavLink>
           </li>
           <li>
-            <Link
-              className={`${({ isActive }: { isActive: boolean }) =>
-                isActive ? "text-red-900" : undefined}`}
-              to={"auth?mode=login"}
+            <NavLink
+              to="/auth?mode=login"
+              className={({ isActive }) => (isActive ? "text-red-900" : "")}
             >
-              login
-            </Link>
+              Login
+            </NavLink>
           </li>
         </ul>
       </nav>
